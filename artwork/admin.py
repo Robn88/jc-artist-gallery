@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import Artwork, Category
 
 # Register your models here.
+
+
 class ArtworkAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -15,10 +17,10 @@ class ArtworkAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-     list_display = (
+    list_display = (
         'name',
         'friendly_name'
-     )
+    )
 
 
 admin.site.register(Artwork, ArtworkAdmin)
