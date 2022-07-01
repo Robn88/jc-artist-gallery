@@ -43,36 +43,44 @@
 
 <body>
   <header class="container-fluid fixed-top">
-    <div class="row">
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-      </div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="row d-flex justify-content-md-around">
+      <div class="col-auto">
+        <nav class="navbar navbar-expand-md navbar-light">
           <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-black" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Works
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">All categories</a>
+                  <a class="dropdown-item" href="#">Still Life</a>
+                  <a class="dropdown-item" href="#">Real Life</a>
+                  <a class="dropdown-item" href="#">Landscapes</a>
+                  <a class="dropdown-item" href="#">Portraits</a>
+                </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Works</a>
+                <a class="nav-link text-black" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Contact</a>
+                <a class="nav-link text-black" href="#">Contact</a>
               </li>
             </ul>
           </div>
         </nav>
       </div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+      <div class="col-auto">
+        <ul class="list-inline list-unstyled text-center">
           <li class="list-inline-item dropdown">
             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
@@ -127,3 +135,66 @@
 </body>
 
 </html>
+<!-- 
+<div class="col-12">
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link text-black nav-text font-weight-bold" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black nav-text font-weight-bold" href="#">Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black nav-text font-weight-bold" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black nav-text font-weight-bold" href="#">Contact</a>
+        </li>
+      </ul>
+      <ul class="list-inline list-unstyled text-center justify-content-right">
+        <li class="list-inline-item dropdown">
+          <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <div class="text-center">
+              <div><i class="fas fa-user fa-lg"></i></div>
+              <p class="my-0">My Account</p>
+            </div>
+          </a>
+          <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <a href="" class="dropdown-item">Product Management</a>
+            {% endif %}
+            <a href="" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
+          </div>
+        </li>
+        <li class="list-inline-item">
+          <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+            <div class="text-center">
+              <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+              <p class="my-0">
+                {% if grand_total %}
+                ${{ grand_total|floatformat:2 }}
+                {% else %}
+                $0.00
+                {% endif %}
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div> -->
