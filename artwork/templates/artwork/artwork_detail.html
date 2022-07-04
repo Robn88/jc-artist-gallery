@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <a href="#">
+                <img class="card-img-top img-thumbnail" src="{{ piece.image.url }}" alt="{{ piece.name }}">
+            </a>
+            <p>{{ piece.name }}</p>
+        </div>
+    </div>
+            
+{% endblock %}

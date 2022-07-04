@@ -27,3 +27,17 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+/* #header-container {
+    padding-top: 50px;
+} */
