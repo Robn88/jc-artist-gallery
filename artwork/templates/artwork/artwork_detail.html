@@ -8,11 +8,28 @@
 <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <a href="#">
-                <img class="card-img-top img-thumbnail" src="{{ piece.image.url }}" alt="{{ piece.name }}">
-            </a>
-            <p>{{ piece.name }}</p>
+            <div class="col-6">
+                <a href="#">
+                    <img class="card-img-top img-thumbnail" src="{{ piece.image.url }}" alt="{{ piece.name }}">
+                </a>
+            </div>
+            <div class="col-6 d-flex flex-column">
+                <h2>{{ piece.name }}</h2>
+                <p>{{ piece.category.friendly_name }}</p>
+                <p>{{ piece.technique }}</p>
+                {% if piece.is_framed %}
+                    <p>Framed</p>
+                {% endif %}
+                <p>€{{ piece.price }}</p>
+                <h3>Description</h3>
+                <p>{{ piece.description }}</p>
+            </div>
+            
         </div>
     </div>
             
 {% endblock %}
+<!-- <a href="#">
+    <img class="card-img-top img-thumbnail" src="{{ piece.image.url }}" alt="{{ piece.name }}">
+</a>
+<p>{{ piece.name }}</p> -->
