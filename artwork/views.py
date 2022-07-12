@@ -20,7 +20,6 @@ def artwork_detail(request, artwork_id):
     """ A view to return an individual piece of artwork """
 
     piece = get_object_or_404(Artwork, pk=artwork_id)
-    print(piece, artwork_id)
 
     context = {
         'piece': piece,

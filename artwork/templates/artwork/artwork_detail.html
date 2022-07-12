@@ -17,12 +17,26 @@
                 <h2>{{ piece.name }}</h2>
                 <p>{{ piece.category.friendly_name }}</p>
                 <p>{{ piece.technique }}</p>
+                <p>{{ piece.id }}</p>
                 {% if piece.is_framed %}
                     <p>Framed</p>
                 {% endif %}
                 <p>€{{ piece.price }}</p>
                 <h3>Description</h3>
                 <p>{{ piece.description }}</p>
+                <form class="form" method="POST" action="{% url 'add_to_bag' piece.id %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- {% if piece.id in bag_items %} -->
+                                <!-- <p>This piece is already in your bag.</p> -->
+                            <!-- {% else %} -->
+                                <input type="submit" value="add to bag" />
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                <!-- {% endif %} -->
+                        </div>
+                    </div>
+                </form>
             </div>
             
         </div>
