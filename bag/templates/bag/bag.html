@@ -11,7 +11,33 @@
         <div class="col">
             {% if bag_items %}
             <div class="table-responsive rounded">
-                {{ bag_items }}
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Piece</th>
+                            <th scope="col" class="text-center">Title</th>
+                            <th scope="col" class="text-center">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-3 w-25"><img class="img-fluid" src="{{ item.artwork.image.url }}"></td>
+                        <td class="text-center">{{ item.artwork.name }}</td>
+                        <td class="text-center">{{ item.artwork.price }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="#" class="btn btn-secondary btn-lg">
+                                <span>Return to gallery</span>
+                            </a>
+                            <a href="#" class="btn btn-secondary btn-lg">
+                                <span>Secure Checkout</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
             </div>
             {% else %}
             <p>You have not added any artwork to your basket yet.</p>
