@@ -37,7 +37,7 @@ body {
 	background: white;
 	z-index: -1;
 }
-/* 
-#topnav {
-    padding-bottom: 56px;
-} */
+
+.remove-item {
+    cursor: pointer;
+}

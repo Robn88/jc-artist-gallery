@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from django.contrib import messages
+
+from artwork.models import Artwork
 
 # Create your views here.
 
@@ -21,3 +24,20 @@ def add_to_bag(request, artwork_id):
     print(artwork_id)
 
     return redirect(redirect_url)
+
+
+def remove_from_bag(request, artwork_id):
+    """Remove the artwork from the shopping bag"""
+
+    try:
+        artwork = get_object_or_404(Artwork, pk=artwork_id)
+        bag = request.session.get('bag', {})
+        bag.pop(artwork_id)
+        messages.success(request, f'Removed {artwork.name} from your bag')
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
