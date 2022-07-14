@@ -26,7 +26,8 @@
                         <td class="text-center">{{ item.artwork.name }}</td>
                         <td class="text-center">{{ item.artwork.price }}</td>
                         <td class="text-center">
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.artwork_id }}" data-artwork_name="{{ item.artwork_name }}"><small>Remove</small></a></td>
+                            <a class="remove-item text-danger float-right"
+                             id="remove_{{ item.artwork_id }}" data-artwork_name="{{ item.artwork_name }}"><small>Remove</small></a></td>
                     </tr>
                     {% endfor %}
                     <tr>
@@ -57,11 +58,11 @@
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
-        // var itemId = $(this).attr('id').split('remove_')[1];
-        // var artworkId = $(this).data('artwork_id');
-        var artworkName = $(this).data('artwork_name');
-        // console.log(itemId);
-        // console.log(artworkId);
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var artworkId = $(this).data('artwork_id');
+        var artworkName = "{{ item.artwork_id }}";
+        console.log(itemId);
+        console.log(artworkId);
         console.log(artworkName);
         // console.log(itemId)
         // var url = `/bag/remove/${artworkId}/`;
