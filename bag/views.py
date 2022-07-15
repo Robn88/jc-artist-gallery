@@ -21,18 +21,17 @@ def add_to_bag(request, artwork_id):
 
     request.session['bag'] = bag
     print(request.session['bag'])
-    print(artwork_id)
 
     return redirect(redirect_url)
 
 
-def remove_from_bag(request, artwork_id):
+def remove_from_bag(request, item_id):
     """Remove the artwork from the shopping bag"""
 
     try:
-        artwork = get_object_or_404(Artwork, pk=artwork_id)
+        artwork = get_object_or_404(Artwork, pk=item_id)
         bag = request.session.get('bag', {})
-        bag.pop(artwork_id)
+        bag.pop(item_id)
         messages.success(request, f'Removed {artwork.name} from your bag')
 
         request.session['bag'] = bag

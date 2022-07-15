@@ -27,7 +27,7 @@
                         <td class="text-center">{{ item.artwork.price }}</td>
                         <td class="text-center">
                             <a class="remove-item text-danger float-right"
-                             id="remove_{{ item.artwork_id }}" data-artwork_name="{{ item.artwork_name }}"><small>Remove</small></a></td>
+                             id="remove_{{ item.item_id }}" data-artwork_id="{{ item.item_id }}"><small>Remove</small></a></td>
                     </tr>
                     {% endfor %}
                     <tr>
@@ -35,7 +35,7 @@
                             <a href="#" class="btn btn-secondary btn-lg">
                                 <span>Return to gallery</span>
                             </a>
-                            <a href="#" class="btn btn-secondary btn-lg">
+                            <a href="{% url 'checkout' %}" class="btn btn-secondary btn-lg">
                                 <span>Secure Checkout</span>
                             </a>
                         </td>
@@ -59,19 +59,14 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var artworkId = $(this).data('artwork_id');
-        var artworkName = "{{ item.artwork_id }}";
         console.log(itemId);
-        console.log(artworkId);
-        console.log(artworkName);
-        // console.log(itemId)
-        // var url = `/bag/remove/${artworkId}/`;
-        // var data = {'csrfmiddlewaretoken': csrfToken};
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
 
-        // $.post(url, data)
-        //  .done(function() {
-        //      location.reload();
-        //  });
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
     })
 </script>
 {% endblock %}
