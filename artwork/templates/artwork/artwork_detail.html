@@ -28,12 +28,12 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-12">
-                            <!-- {% if piece.id in bag_items %} -->
-                                <!-- <p>This piece is already in your bag.</p> -->
-                            <!-- {% else %} -->
+                            {% if already_in_bag %}
+                                <p><strong>This piece is already in your bag.</strong></p>
+                            {% else %}
                                 <input type="submit" value="add to bag" />
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                <!-- {% endif %} -->
+                            {% endif %}
                         </div>
                     </div>
                 </form>

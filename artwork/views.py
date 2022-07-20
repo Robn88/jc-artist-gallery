@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Artwork
+from bag.contexts import bag_contents
 
 # Create your views here.
 
@@ -20,9 +21,36 @@ def artwork_detail(request, artwork_id):
     """ A view to return an individual piece of artwork """
 
     piece = get_object_or_404(Artwork, pk=artwork_id)
+    bag = request.session.get('bag', {})
+
+    for item in bag:
+        if int(item) == piece.id:
+            already_in_bag = True
+        else:
+            already_in_bag = False
 
     context = {
         'piece': piece,
+        'already_in_bag': already_in_bag,
     }
 
     return render(request, 'artwork/artwork_detail.html', context)
+
+
+# def in_bag(request, artwork_id):
+#     """ A view to return whether or not the piece has been added to the bag """
+
+#     bag = request.session.get('bag', {})
+#     piece = get_object_or_404(Artwork, pk=artwork_id)
+
+#     for item in bag:
+#         if item.item_id == piece.id:
+#             already_in_bag = True
+#     if piece.id in bag:
+#         already_in_bag = True
+
+#     context = {
+#         'already_in_bag': already_in_bag,
+#     }
+
+#     return render(request, context)
