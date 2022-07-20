@@ -1,1 +1,1 @@
-web: gunicorn boutique_ado.wsgi:application
+web: gunicorn jc_artist.wsgi:application
