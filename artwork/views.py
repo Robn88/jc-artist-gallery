@@ -22,6 +22,7 @@ def artwork_detail(request, artwork_id):
 
     piece = get_object_or_404(Artwork, pk=artwork_id)
     bag = request.session.get('bag', {})
+    already_in_bag = False
 
     for item in bag:
         if int(item) == piece.id:
@@ -35,22 +36,3 @@ def artwork_detail(request, artwork_id):
     }
 
     return render(request, 'artwork/artwork_detail.html', context)
-
-
-# def in_bag(request, artwork_id):
-#     """ A view to return whether or not the piece has been added to the bag """
-
-#     bag = request.session.get('bag', {})
-#     piece = get_object_or_404(Artwork, pk=artwork_id)
-
-#     for item in bag:
-#         if item.item_id == piece.id:
-#             already_in_bag = True
-#     if piece.id in bag:
-#         already_in_bag = True
-
-#     context = {
-#         'already_in_bag': already_in_bag,
-#     }
-
-#     return render(request, context)
