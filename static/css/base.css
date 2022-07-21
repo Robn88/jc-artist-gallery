@@ -83,3 +83,40 @@ body {
     transform: translate3d(0, -20em, 0);
     overflow: hidden;
 }
+
+/* media queries */
+
+@media only screen and (min-width: 320px) {
+    #home-bg-img {
+        background-position: 50% 30%;
+        height: calc(76vh - 20px);
+    }
+  }
+
+  @media only screen and (min-width: 375px) {
+    #home-bg-img {
+        background-position: 50% 30%;
+        height: calc(80vh - -18px);
+    }
+  }
+
+/* @media only screen and (min-width: 768px) {
+    #home-bg-img {
+        background-position: 50% 30%;
+        height: calc(90vh - 20px);
+    }
+  } */
+
+  @media only screen and (min-width: 992px) {
+    #home-bg-img {
+        background-position: 50% 30%;
+        height: calc(90vh - 20px);
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    #home-bg-img {
+        background-position: 50% 40%;
+        height: calc(94vh - 40px);
+    }
+  }
