@@ -57,6 +57,11 @@ body {
     width: 100%;
 }
 
+#cta-gallery {
+    background-color: #000;
+    color: aliceblue;
+}
+
  /* From tim */
 .alert {
     min-height: 76px;

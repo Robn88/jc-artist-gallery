@@ -123,15 +123,24 @@
     </div>
   </header>
   {% if messages %}
-  <div class="message-container"></div>
-  {% endif %}
+    <section id="alerts">
+        {% for msg in messages %}
+            <!-- all django message tags mirror bootstrap, except error/danger -->
+            <aside class="alert alert-dismissable fade show {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} text-center" role="alert">
+                <h3>{{ msg }}</h3>
+                  <span><i class="fas fa-times"></i></span>
+            </aside>
+        {% endfor %}
+    </section>
+    {% endif %}
 
   {% block page_header %}
   {% endblock %}
-
+  <!-- <main class="mt-5 mx-5 bg-dark"> -->
   {% block content %}
   {% endblock %}
-
+  <!-- </main> -->
+  <script src="{% static 'js/script.js' %}"></script>
   {% block postloadjs %}
   {% endblock %}
 </body>

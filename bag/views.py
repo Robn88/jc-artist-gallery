@@ -20,6 +20,7 @@ def add_to_bag(request, artwork_id):
     bag[artwork_id] = 1
 
     request.session['bag'] = bag
+    messages.success(request, "Added to bag.")
 
     return redirect(redirect_url)
 
@@ -34,6 +35,7 @@ def remove_from_bag(request, item_id):
         messages.success(request, f'Removed {artwork.name} from your bag')
 
         request.session['bag'] = bag
+
         return HttpResponse(status=200)
 
     except Exception as e:
