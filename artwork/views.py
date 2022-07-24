@@ -1,14 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Artwork
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from bag.contexts import bag_contents
 
 from .forms import ArtworkForm
 
-# Create your views here.
-
 
 def all_artwork(request):
-    """ A view to return all of the artwork, including sorting and search queries """
+    # A view to return all of the artwork,
+    # including sorting and search queries
 
     artwork = Artwork.objects.all()
 
@@ -40,9 +41,24 @@ def artwork_detail(request, artwork_id):
     return render(request, 'artwork/artwork_detail.html', context)
 
 
+@login_required
 def add_artwork(request):
     """ Add artwork to the store """
-    form = ArtworkForm
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ArtworkForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added artwork!')
+            return redirect(reverse('add_artwork'))
+        else:
+            messages.error(request, 'Failed to add artwork. Please ensure \
+                 the form is valid.')
+    else:
+        form = ArtworkForm()
     template = 'artwork/add_artwork.html'
     context = {
         'form': form,
