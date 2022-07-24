@@ -24,6 +24,12 @@
                 <p>€{{ piece.price }}</p>
                 <h3>Description</h3>
                 <p>{{ piece.description }}</p>
+                {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_artwork' piece.id %}">Edit</a> | 
+                        <a class="text-danger" href="{% url 'delete_artwork' piece.id %}">Delete</a>
+                    </small>
+                {% endif %}
                 <form class="form" method="POST" action="{% url 'add_to_bag' piece.id %}">
                     {% csrf_token %}
                     <div class="row">
