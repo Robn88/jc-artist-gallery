@@ -65,3 +65,46 @@ def add_artwork(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_artwork(request, artwork_id):
+    """ Edit artwork in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    artwork = get_object_or_404(Artwork, pk=artwork_id)
+    if request.method == 'POST':
+        form = ArtworkForm(request.POST, request.FILES, instance=artwork)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated artwork!')
+            return redirect(reverse('artwork_detail', args=[artwork.id]))
+        else:
+            messages.error(request, 'Failed to update artwork. Please ensure \
+                 the form is valid.')
+    else:
+        form = ArtworkForm(instance=artwork)
+        messages.info(request, f'You are editing {artwork.name}')
+
+    template = 'artwork/edit_artwork.html'
+    context = {
+        'form': form,
+        'artwork': artwork,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_artwork(request, artwork_id):
+    """ Delete artwork from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    artwork = get_object_or_404(Artwork, pk=artwork_id)
+    artwork.delete()
+    messages.success(request, 'Artwork deleted!')
+    return redirect(reverse('artwork'))
