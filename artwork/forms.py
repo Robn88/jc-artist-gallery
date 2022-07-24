@@ -1,5 +1,5 @@
 from django import forms
-# from .widgets import CustomClearableFileInput
+from .widgets import CustomClearableFileInput
 from .models import Artwork, Category
 
 
@@ -9,7 +9,8 @@ class ArtworkForm(forms.ModelForm):
         model = Artwork
         fields = '__all__'
 
-    # image = forms.ImageField(label='Image', required=True, widget=CustomClearableFileInput())
+    image = forms.ImageField(label='Image',
+                             required=True, widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
