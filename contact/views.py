@@ -7,7 +7,7 @@ from .models import ContactMessage
 
 def contact_form(request):
 
-    if request.method == POST:
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
