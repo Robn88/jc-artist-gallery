@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>hello</h1>
+<div class="container-fluid mt-auto mb-auto" id="newsletter-signup-img">
+    <div class="row ml-1">
+        <div class="col-6">
+            <h2>Newsletter Signup</h2>
+            <br>
+            <p>If you would like to receive news about my latest works, and any upcoming exhibitions, then you can sign up for my newsletter below.</p>
+            <form class="mt-3" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-black rounded-0 float-right">Sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
