@@ -16,6 +16,8 @@ def newsletter_signup(request):
                             signed up to the newsletter!')
         else:
             instance.save()
+            messages.success(request, 'Thank you. Newsletter signup \
+                            successful!')
 
     template = 'newsletter/newsletter.html'
 
