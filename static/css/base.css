@@ -39,6 +39,14 @@ body {
     height: calc(100vh - -190px);
 }
 
+#about-img {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), url('/media/about_background.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    height: calc(100vh - -190px);
+}
+
 .text-black {
     color: #000 !important;
 }
@@ -164,7 +172,7 @@ body {
 @media only screen and (min-width: 320px) {
     #home-bg-img {
         background-position: 50% 30%;
-        height: calc(76vh - 20px);
+        height: calc(76vh - 7px);
     }
     #newsletter-signup-img {
         height: calc(100vh - 138px);
@@ -174,10 +182,16 @@ body {
     }
 }
 
+@media only screen and (max-width: 375px) {
+    #about-img {
+        height: calc(100vh - 125px);
+    }
+}
+
 @media only screen and (min-width: 375px) {
     #home-bg-img {
         background-position: 50% 30%;
-        height: calc(80vh - -18px);
+        height: calc(80vh - -29px);
     }
     #newsletter-signup-img {
         height: calc(100vh - 80px);
@@ -185,9 +199,10 @@ body {
     #contact-img {
         height: calc(100vh - -340px);
     }
+    #about-img {
+        height: calc(100vh - 69px);
+    }
 }
-
-
 
 @media only screen and (min-width: 768px) {
     #newsletter-signup-img {
@@ -195,8 +210,7 @@ body {
     }
     #contact-img {
         height: calc(100vh - -290px);
-    }
-    
+    }    
 }
 
 @media only screen and (max-width: 992px) {
@@ -215,6 +229,9 @@ body {
     #contact-img {
         height: calc(100vh - -220px);
     }
+    #about-img {
+        height: calc(100vh - 70px);
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -224,5 +241,8 @@ body {
     }
     #contact-img {
         height: calc(100vh - -200px);
+    }
+    #about-img {
+        height: calc(100vh - 80px);
     }
 }
