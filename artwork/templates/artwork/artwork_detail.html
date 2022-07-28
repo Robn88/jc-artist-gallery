@@ -8,12 +8,12 @@
 <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6">
                 <a href="#">
                     <img class="card-img-top img-thumbnail" src="{{ piece.image.url }}" alt="{{ piece.name }}">
                 </a>
             </div>
-            <div class="col-6 d-flex flex-column">
+            <div class="col-md-6 d-flex flex-column">
                 <h2>{{ piece.name }}</h2>
                 <p>{{ piece.category.friendly_name }}</p>
                 <p>{{ piece.technique }}</p>
@@ -36,8 +36,8 @@
                         <div class="col-12">
                             {% if already_in_bag %}
                                 <p><strong>This piece is already in your bag.</strong></p>
-                                <a class="btn btn-black float-left mr-4" href="{% url 'artwork' %}">Return to Gallery</a>
-                                <a class="btn btn-black" href="{% url 'view_bag' %}">Secure Checkout</a>
+                                <a class="btn btn-black float-left mr-4 mt-2 mb-2" href="{% url 'artwork' %}">Return to Gallery</a>
+                                <a class="btn btn-black mt-2 mb-2" href="{% url 'view_bag' %}">Secure Checkout</a>
                             {% else %}
                                 <a class="btn btn-black float-left mr-4" href="{% url 'artwork' %}">Return to Gallery</a>
                                 <input class="btn btn-black" type="submit" value="Add to bag" />

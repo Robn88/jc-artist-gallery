@@ -191,6 +191,14 @@ body {
     
 }
 
+@media only screen and (max-width: 992px) {
+    .nav-link {
+        padding: 0.15rem;
+    }
+}
+
+
+
 @media only screen and (min-width: 992px) {
     #home-bg-img {
         background-position: 50% 30%;
