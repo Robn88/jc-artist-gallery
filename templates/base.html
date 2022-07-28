@@ -75,7 +75,10 @@
                 <a class="nav-link text-black" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-black" href="#">Newsletter</a>
+                <a class="nav-link text-black" href="{% url 'newsletter' %}">Newsletter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'contact' %}">Contact</a>
               </li>
             </ul>
           </div>
@@ -128,7 +131,6 @@
             <!-- all django message tags mirror bootstrap, except error/danger -->
             <aside class="alert alert-dismissable fade show {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} text-center" role="alert">
                 <h3>{{ msg }}</h3>
-                  <span><i class="fas fa-times"></i></span>
             </aside>
         {% endfor %}
     </section>

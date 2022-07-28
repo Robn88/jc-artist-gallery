@@ -63,6 +63,7 @@ body {
     cursor: pointer;
 }
 
+
 #alerts {
     display: grid;
     position: absolute;
@@ -73,6 +74,11 @@ body {
 #cta-gallery {
     background-color: #000;
     color: aliceblue;
+}
+
+.btn-black {
+    background: black;
+    color: white;
 }
 
 /* Allauth forms */
