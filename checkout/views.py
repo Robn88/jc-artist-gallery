@@ -4,6 +4,8 @@ from django.shortcuts import (
 from django.contrib import messages
 from django.views.decorators.http import require_POST
 from django.conf import settings
+from django.core.mail import send_mail, EmailMessage
+from django.template.loader import render_to_string
 
 from .models import Order, OrderLineItem
 from artwork.models import Artwork
@@ -150,13 +152,33 @@ def checkout_success(request, order_number):
                 'default_street_address2': order.street_address2,
                 'default_county': order.county,
             }
-        user_profile_form = UserProfileForm(profile_data, instance=profile)
-        if user_profile_form.is_valid():
-            user_profile_form.save()
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
+
+    cust_email = order.email
+    subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt'
+            )
+    body = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_body.txt'
+    )
+    # body = render_to_string(
+    #     f'Hello {order.full_name},'
+    #     f'Thank you for your order from JC Artist. Your order number is '
+    #     f'{order_number}. Please allow 2 weeks for delivery.'
+    #     f'you have access to variables like {order.email} etc'
+    # )
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [cust_email]
+    )
 
     if 'bag' in request.session:
         del request.session['bag']
