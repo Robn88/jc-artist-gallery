@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse,
+    get_object_or_404, HttpResponse)
 from django.contrib import messages
 from django.views.decorators.http import require_POST
 from django.conf import settings
@@ -26,8 +28,10 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(
+            request,
+            'Sorry, your payment cannot be processed right now.'
+            'Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
@@ -62,10 +66,10 @@ def checkout(request):
                     )
                     order_line_item.save()
                 except Artwork.DoesNotExist:
-                    messages.error(request, (
-                        "One of the pieces in your bag wasn't \
-                             found in our database. "
-                        "Please call us for assistance!")
+                    messages.error(
+                        request,
+                        "One of the pieces in your bag wasn't found in "
+                        "our database. Please call us for assistance!"
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))

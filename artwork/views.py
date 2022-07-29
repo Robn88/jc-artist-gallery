@@ -82,8 +82,10 @@ def edit_artwork(request, artwork_id):
             messages.success(request, 'Successfully updated artwork!')
             return redirect(reverse('artwork_detail', args=[artwork.id]))
         else:
-            messages.error(request, 'Failed to update artwork. Please ensure \
-                 the form is valid.')
+            messages.error(
+                request,
+                'Failed to update artwork.'
+                'Please ensure the form is valid.')
     else:
         form = ArtworkForm(instance=artwork)
         messages.info(request, f'You are editing {artwork.name}')

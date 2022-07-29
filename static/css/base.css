@@ -51,6 +51,10 @@ body {
     color: #000 !important;
 }
 
+.btn.btn-black:hover {
+    color: white;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

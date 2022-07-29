@@ -11,13 +11,14 @@ def contact_form(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'message')
     else:
         form = ContactForm()
 
-        template = 'contact/contact.html'
+    template = 'contact/contact.html'
 
     context = {
         'form': form,
     }
 
-    return render(request, template, context) 
+    return render(request, template, context)
