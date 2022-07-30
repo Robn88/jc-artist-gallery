@@ -162,17 +162,18 @@ def checkout_success(request, order_number):
 
     cust_email = order.email
     subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt'
-            )
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {
+                'order_number': order_number
+            }
+        )
     body = render_to_string(
-        'checkout/confirmation_emails/confirmation_email_body.txt'
+        'checkout/confirmation_emails/confirmation_email_body.txt',
+        {
+            'order': order,
+            'contact_email': settings.DEFAULT_FROM_EMAIL,
+        }
     )
-    # body = render_to_string(
-    #     f'Hello {order.full_name},'
-    #     f'Thank you for your order from JC Artist. Your order number is '
-    #     f'{order_number}. Please allow 2 weeks for delivery.'
-    #     f'you have access to variables like {order.email} etc'
-    # )
     send_mail(
         subject,
         body,
