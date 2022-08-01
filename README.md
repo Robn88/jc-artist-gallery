@@ -20,15 +20,16 @@
     * [Contact Page](#contact-page)
     * [Bag Page](#bag-page)
     * [Checkout Page](#checkout-page)
+    * [Checkout Success page](#checkout-success-page)
     * [My Profile Page](#my-profile-page)
-    * [](#)
-    * [](#)
+    * [Order History Page](#order-history-page)
     * [](#)
     * [](#)
 
 - [Technologies](#technologies)
-    *
-    *
+    * [Languages](#languages)
+    * [Libraries and Programs](#libraries-and-programs)
+    * [](#)
 - [Deployment](#deployment)
 
 - [Credits](#credits)
@@ -110,7 +111,17 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 
 ### Wireframes
 
-- 
+#### Home Page
+
+![](link)
+
+#### Artwork
+
+![](link)
+
+#### Artwork detail
+
+![](link)
 
 
 ### Database Schema
@@ -187,6 +198,12 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 
 ![checkout page](assets/readme/screenshots/checkout.png)
 
+### Checkout Success Page
+
+- The checkout success page is displayed upon a successful transaction. A message appears from the top, and automatically disappears after a few seconds. This page offers users a summary of their purchase,a nd follows the same minimalist approach to the checkout page.
+
+![checkout success page](assets/readme/screenshots/checkout_success.png)
+
 
 ### My Profile Page
 
@@ -194,13 +211,137 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 
 ![my profile page](assets/readme/screenshots/my_profile.png)
 
+### Order History Page
+
+- The order history page can be reached by clicking on one of the blue links detailed above. This essentially provides the same information that is displayed on the checkout success page.
+
+![order history page](assets/readme/screenshots/order_history.png)
+
 
 
 ## Technologies
 
+### Languages
+
+- HTML5
+
+- CSS3
+
+- JavaScript
+
+- Python
+
+### Libraries and Programs
+
+- [Django](https://www.djangoproject.com/)
+    - The Django framework was used to build the site using the model, view template architecture.
+
+- [Bootstrap](https://getbootstrap.com/)
+    - The Bootstrap framework was used to build and style the website easily.
+
+- [Jquery](https://jquery.com/)
+    - Used to facilitate HTML DOM tree traversal and manipulation, as well as event handling.
+
+- [Git](https://git-scm.com/)
+    - Used for version control.
+
+- [Github](https://github.com/)
+    - Used to host the repository.
+
+- [Gitpod](https://www.gitpod.io/)
+    - The development environment, where the site was built.
+
+- [Google fonts](https://fonts.google.com/about)
+    - The font used on the website was taken from here.
+
+- [Font Awesome](https://fontawesome.com/)
+    - The fonts used on the site were obtained from this site.
+
+- [PostgreSQL](https://www.postgresql.org/)
+    - This was the database used for the project.
+
+- []()
+    - 
+
+- [Balsamiq](https://balsamiq.com/)
+    - This software was used to create the wireframes.
+
+- [AWS](https://aws.amazon.com/s3/)
+    - An AWS s3 bucket was used to host the static files for the project.
+
+- [Stripe](https://stripe.com/gb)
+    - Stripe was used to process the payments for the project.
+
+- [Heroku](https://www.heroku.com/)
+    - The website was deployed using Heroku.
+
+- [TinyPNG](https://tinypng.com/)
+    - TinyPNG was used to compress the images to make the website load faster.
+
+    
 
 
 ## Deployment
+
+- This project was deployed using Github and Heroku. This was how it was accomplished:
+
+    1. First, I logged in to Heroku, then on the dashboard, clicked on the 'new' button. A dropdown menu appears, and you click on 'create new app'.
+
+    2. I then chose a name for my app, in this case jc-artist, and set the region to Europe.
+
+    3. I then clicked on the resources tab,and under resources, searched for Heroku Postgres.
+
+    4. Having selected the database, I then had to choose which plan to use. In my case, I chose Hobby dev, as it is free.
+
+    5. Having done this, I then navigated to the settings tab, and clicking on the reveal config vars, I obtained the Database URL.
+
+    6. Returning now to Gipod, I create a file called env.py in the base directory.
+
+    7. In env.py, I then created an environment variable as can be seen below:
+
+    os.environ["DATABASE_URL"] = " "
+
+    I then put the value from the DATABASE_URL Config Var between the double quotes.
+
+    8. In env.py, I then created a new environment variable for the secret key, as can be seen below:
+
+    os.environ["SECRET_KEY"] = " "
+
+    I then created my own secret key and put it between the double quotes.
+
+    9. I then returned to the settings section of Heroku, and created a new Config Var called SECRET_KEY, and assigned it the same value as in stage 8.
+
+    10. Next, I opened settings.py and added the following code:
+
+    ![deployment screenshot 1](assets/readme/deployment/deployment_screenshot_1.png)
+
+    This is to prevent the application from throwing an error if it is unable to find the file, since it won't exist in production.
+
+    11. In settings.py, I then changed the insecure key to the path to the newly created secret key.
+
+    12. Again, in settings.py, I created a python dictionary to connect the database to the application.
+
+    ![deployemnt screenshot 2](assets/readme/deployment/deployment_screenshot_2.png)
+
+    13. Returning to Heroku, I now added a new Config Var called DIASBLE_COLLECTSTATIC, and set its value to 1. This was only to allow the project to be deployed, and would be subsequently deleted.
+
+    14. I then returned to settings.py in the application and added the following code:
+
+    ![deployment screenshot 3](assets/readme/deployment/deployment_screenshot_3.png)
+
+    15. It was then necessary to add [TEMPLATES_DIR] to the DIRS section of TEMPLATES in settings.py:
+
+    ![deployment screenshot 4](assets/readme/deployment/deployment_screenshot_4.png)
+
+    16. Before it could be deployed, the application had to be added to ALLOWED_HOSTS. This consisted of putting the app name, followed by .herokuapp.com. I also put 'localhost', in order to allow me to run the project locally.
+
+    17. The next step was to create the Procfile, in the base directory of the app. The purpose of this was to declare to Heroku that my application would accept http traffic, and to use Gunicorn, the production web server.
+
+    18. Following that, I added and committed the files to my GitHub repository.
+
+    19. Once this was done, I returned to Heroku, and clicked on the Deploy tab. I then selected GitHub as the deployment method.
+
+    20. When I had connected my GitHub account, I then used the search function and found the name of my repository. I then clicked on deploy branch to deploy my project.
 
 
 
