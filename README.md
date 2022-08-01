@@ -38,6 +38,8 @@
 
 JC Artist Gallery is a site which allows users to browse works of art by an Artist, and then buy them if desired. Users can create an account, and sign up for a newsletter. The likely visitors to the website are people who are interested in art by this particular artist - they may have found out about him at an exhibition. They may also have searched for art by local artists in the Bristol area.
 
+[Back to top ⇧](#jc-artist-gallery)
+
 ## User Stories
 
 You can find all of the user stories by clicking [here](https://github.com/Robn88/jc-artist-gallery/issues)
@@ -109,24 +111,35 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 
 - Regarding the background images, which can currently be found on the index, contact, about and newsletter pages. Using works of art as background images, and applying CSS to them in order to make the content above them be easily readable, was a choice that I made to reinforce the artistic nature of the site. I especially feel that the hero image on the front page makes a very strong visual impact.
 
+[Back to top ⇧](#jc-artist-gallery)
+
 ### Wireframes
 
 #### Home Page
 
-![](link)
+![home page wireframe](assets/readme/wireframes/home_page.png)
+
+- My initial plan for the home page was to have a transparent header, and just have the links floating on top of the background hero image. However, I abandoned this idea in favour of a fixed, white navbar. I did this for a number of reasons, chiefly because there wasn't enough contrast between the anchor links and the background, and a plain white background looked better. I also abandoned the idea of having a carousel early on: in the end, I found that using one background image had a stronger effect. I also neglected to include icons for both the account and 'bag', which in the finished project is represented by an artist's palette instead.
 
 #### Artwork
 
-![](link)
+![artwork view wireframe](assets/readme/wireframes/artwork_view.png)
+
+- My original idea for the artwork view was to display only two pieces per page on large screens. However, I also changed my mind, as I wanted users to be enticed by the image, and then to click on it to see it in higher quality. Therefore, having smaller images would be more likely to draw users in. I also did not implement sorting by category, as I felt that this detracted from the feel of the site as a gallery, and with so few pieces of art all by the same artist, it ultimately was not necessary at this point in the project.
 
 #### Artwork detail
 
-![](link)
+![artwork detail wireframe](assets/readme/wireframes/artwork_detail.png)
 
+- The artwork detail page ultimately ended up being the most similar to the wireframe. I had a clear idea of how the art should be presented, taking center stage, with the description and details on the right.
+
+[Back to top ⇧](#jc-artist-gallery)
 
 ### Database Schema
 
+This is the entity relationship diagram for my data:
 
+![entity relationship diagram](assets/readme/erd/entity_relationship_diagram.png)
 
 
 ## Features
@@ -217,7 +230,7 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 
 ![order history page](assets/readme/screenshots/order_history.png)
 
-
+[Back to top ⇧](#jc-artist-gallery)
 
 ## Technologies
 
@@ -260,9 +273,6 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 - [PostgreSQL](https://www.postgresql.org/)
     - This was the database used for the project.
 
-- []()
-    - 
-
 - [Balsamiq](https://balsamiq.com/)
     - This software was used to create the wireframes.
 
@@ -278,12 +288,12 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 - [TinyPNG](https://tinypng.com/)
     - TinyPNG was used to compress the images to make the website load faster.
 
-    
+[Back to top ⇧](#jc-artist-gallery)
 
 
 ## Deployment
 
-- This project was deployed using Github and Heroku. This was how it was accomplished:
+- This project was deployed using Github and Heroku. The live deployed application can be found at [JC Artist](https://jc-artist.herokuapp.com/). This was how it was accomplished:
 
     1. First, I logged in to Heroku, then on the dashboard, clicked on the 'new' button. A dropdown menu appears, and you click on 'create new app'.
 
@@ -343,6 +353,32 @@ Overall, many parts of the site, such as the header, the view artwork page, as w
 
     20. When I had connected my GitHub account, I then used the search function and found the name of my repository. I then clicked on deploy branch to deploy my project.
 
+[Back to top ⇧](#jc-artist-gallery)
 
+### Local Deployment
+
+*Gitpod* IDE was used to write the code for this project.
+
+To make a local copy of this repository, you can clone the project by typing the follow into your IDE terminal:
+- `git clone https://github.com/Robn88/jc-artist-gallery.git`
+
+You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Robn88/jc-artist-gallery)
+
+
+[Back to top ⇧](#jc-artist-gallery)
 
 ## Credits
+
+### Code
+
+
+
+
+### Media
+
+
+### Other
