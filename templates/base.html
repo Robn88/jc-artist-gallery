@@ -7,7 +7,12 @@
   {% block meta %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="Local Bristol local artist online gallery,
+  painting portraits, landscapes, still life and real life, in a wide variety
+  of styles, with artwork available to purchase online">
+  <meta name="keywords" content="artist, artwork, paintings, gallery, online gallery, local artist, impressionism,
+       art for sale Bristol, John Carmine, contemporary, landscape, still life, real life, portrait,
+       commission, exhibition">
   {% endblock %}
 
   {% block extra_meta %}
@@ -95,19 +100,20 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
               {% if request.user.is_authenticated %}
-                {% if request.user.is_superuser %}
-                <a href="{% url 'add_artwork' %}" class="dropdown-item">Artwork Management</a>
-                {% endif %}
-                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              {% if request.user.is_superuser %}
+              <a href="{% url 'add_artwork' %}" class="dropdown-item">Artwork Management</a>
+              {% endif %}
+              <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
               {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
               {% endif %}
             </div>
           </li>
           <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+              href="{% url 'view_bag' %}">
               <div class="text-center">
                 <div><i class="fa-solid fa-palette nav-icon"></i></div>
                 <p class="my-0">
@@ -125,15 +131,17 @@
     </div>
   </header>
   {% if messages %}
-    <section id="alerts">
-        {% for msg in messages %}
-            <!-- all django message tags mirror bootstrap, except error/danger -->
-            <aside class="alert alert-dismissable fade show {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} text-center" role="alert">
-                <h3>{{ msg }}</h3>
-            </aside>
-        {% endfor %}
-    </section>
-    {% endif %}
+  <section id="alerts">
+    {% for msg in messages %}
+    <!-- all django message tags mirror bootstrap, except error/danger -->
+    <aside
+      class="alert alert-dismissable fade show {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} text-center"
+      role="alert">
+      <h3>{{ msg }}</h3>
+    </aside>
+    {% endfor %}
+  </section>
+  {% endif %}
 
   {% block page_header %}
   {% endblock %}
