@@ -1,3 +1,5 @@
+/* jshint esversion: 11, jquery: true */
+
 // auto-hide alerts
 const alerts = document.querySelectorAll("aside.alert");
 let overlay = document.getElementById("overlay");

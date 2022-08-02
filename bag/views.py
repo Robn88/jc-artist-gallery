@@ -3,8 +3,6 @@ from django.contrib import messages
 
 from artwork.models import Artwork
 
-# Create your views here.
-
 
 def view_bag(request):
     """ A view to return the bag """
