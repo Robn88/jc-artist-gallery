@@ -23,13 +23,11 @@
     * [Checkout Success page](#checkout-success-page)
     * [My Profile Page](#my-profile-page)
     * [Order History Page](#order-history-page)
-    * [](#)
-    * [](#)
+- [Future Features](#future-features)
 
 - [Technologies](#technologies)
     * [Languages](#languages)
     * [Libraries and Programs](#libraries-and-programs)
-    * [](#)
 - [Deployment](#deployment)
 
 - [Credits](#credits)
@@ -232,6 +230,33 @@ This is the entity relationship diagram for my data:
 
 [Back to top ⇧](#jc-artist-gallery)
 
+## Future Features
+
+- 
+
+## Web Marketing
+
+### Facebook Business Page
+
+I have not created a Facebook page for this site, but I have created a mockup of what a site may look like below:
+
+![mockup of facebook business page](assets/readme/facebook/facebook_mockup.png)
+
+### Web Marketing Strategy
+
+- If I were to use a strategy to help market this site to others, I would opt for an organic, social media marketing campaign. The reasons for this are many:
+    1. Many artists, while independent, organise themselves into collectives, based perhaps on geography. In Bristol alone, there are many collectives, putting on events and exhibitions. An artist could get more publicity joining one of these collectives, and having links to their site here, which see a lot more traffic than indiviudal artist sites.
+
+    2. I feel that people wanting to buy art don't go looking for a specific piece to buy - they prefer to browse and see if a particular piece jumps out at them. Most people would also prefer to see a piece of art in real life before committing to buying it. Therefore, paid advertising would have a very low success rate compared to someone who, say, is looking to buy a piece of furniture.
+
+    3. One of the other benefits of social media marketing is the ability to connect with your audience, by sharing works in progress, or asking for ideas and feedback. Given that most social media encourages the sharing of photos, this would work fantastically well in tandem with an Artist. The ability to share pictures, and then for followers to potentially share them on, could be a very good way to create interest and business.
+
+    4. Social media marketing has one other crucial advantage - it's free! Given that relatively few artists make a living purely from selling their own work, it is unlikely that the website owner would have money to spend on advertising.
+
+### SEO Optimization
+
+For the SEO optimization, after doing some research using [word tracker](https://www.wordtracker.com/) I settled on some recurring words : gallery, artist, art, local, and Bristol. These were the words that yielded the most success, and the most results.
+
 ## Technologies
 
 ### Languages
@@ -287,6 +312,12 @@ This is the entity relationship diagram for my data:
 
 - [TinyPNG](https://tinypng.com/)
     - TinyPNG was used to compress the images to make the website load faster.
+
+- [Pexels](https://www.pexels.com/)
+    - Pexels was used to find royalty-free images to use on the site.
+
+- [Lucidchart](https://lucid.co/)
+    - Lucidchat was used to make the ERD in this readme.
 
 [Back to top ⇧](#jc-artist-gallery)
 
@@ -375,10 +406,36 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 ### Code
 
+- A large part of this site is inspired by the [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/250e2c2b8e43cccb56b4721cd8a8bd4de6686546) walkthrough project by code institute. The following parts of the site are taken from that project, sometimes with minimal changes, such as renaming variables:
+    - The checkout app is an almost exact copy;
+    - The profiles app is also very similar;
+    - The bag app is also almost an exact copy;
+    - The views and admin in the Artwork app also follow the Boutique Ado solution.
+
+- I learned how to make a newsletter app by following [this video](https://www.youtube.com/watch?v=TBVsILIt4HM&ab_channel=MasterCodeOnline)
+
+- I spent a <em>lot</em> of time on the documentation for bootstrap and django.
+
+- The CSS for the messages was given to me by my mentor Tim. It can be found on line 147 of static/css/base.css
+
+- I consulted the forums of [Stack Overflow](https://stackoverflow.com/) frequently when faced with problems. I also consulted the Code Institute slack community often in order to find solutions to common problems.
 
 
 
 ### Media
 
+- The following images were found on Pexels:
+    - The background image on the newsletter page can be found [here](https://www.pexels.com/photo/blue-shade-painting-1762973/)
 
-### Other
+    - The background image on the contact page can be found [here](https://www.pexels.com/photo/photo-of-red-and-blue-abstract-painting-3530054/)
+
+    - The background image on the about page can be found [here](https://www.pexels.com/photo/abstract-painting-1234853/)
+
+    - The background image on the 404 page can be found [here](https://www.pexels.com/photo/red-paint-on-white-wall-6757684/)
+
+- All of the pictures of Art available in the store were taken from their respective wikipedia pages, apart from [Still Life with Flowers and Fruit](https://www.getty.edu/art/collection/object/103RF8)
+
+- The background image on the home page was taken from [here](https://medium.com/sharks-and-spades/artist-paints-himself-painting-himself-painting-himself-painting-himself-ed11017d25fc)
+
+
+
