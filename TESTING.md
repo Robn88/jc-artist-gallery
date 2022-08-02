@@ -76,6 +76,77 @@ The code for the python files was tested using [this website](http://pep8online.
 
 ## User Story Testing
 
+### EPIC | Navigation
+
+<em>As a shopper I can easily see all the artwork available so that I can find one I am interested in purchasing.</em>
+
+![view artwork gif](assets/readme/user_story_testing/navigation/view_artwork.gif)
+
+<em>As a shopper I can view an individual piece of art so that I can see information about the piece, such as its price, dimensions, description, and whether or not it is framed.</em>
+
+![view artwork detail gif](assets/readme/user_story_testing/navigation/view_artwork_detail.gif)
+
+<em>As a shopper I can easily see the current cost of items selected to purchase so that I know how much I am currently set to spend at the checkout.</em>
+
+![view current cost gif](assets/readme/user_story_testing/navigation/view_current_cost.gif)
+
+### EPIC | Registration and User Accounts
+
+<em>As a site user I can easily register for an account so that I will have a profile that will store all of my personal information and order history.</em>
+
+![create account gif](assets/readme/user_story_testing/accounts/create_account.gif)
+
+<em>As a site user I can receive an email when creating my account so that I can be sure that my account creation was successful.</em>
+
+![verify email gif](assets/readme/user_story_testing/accounts/verify_email.gif)
+
+<em>As a site user I can easily log in and log out so that I can access my account.</em>
+
+![log in and log out gif](assets/readme/user_story_testing/accounts/login_logout.gif)
+
+<em>As a site user I can easily recover my password so that I can regain access to my account.</em>
+
+![recover password gif](assets/readme/user_story_testing/accounts/password_recovery.gif)
+
+<em>As a site user I can have a personalized user profile so that I can see my order history, edit my personal information, and add my payment details.</em>
+
+![profile gif](assets/readme/user_story_testing/accounts/profile.gif)
+
+### EPIC | Purchasing and Checkout
+
+
+<em>As a shopper I can see the artwork that I have selected to buy so that I can see the total cost and how many items I have added to the bag.</em>
+
+![view bag gif](assets/readme/user_story_testing/checkout/view_bag.gif)
+
+<em>As a shopper I can easily enter my payment details so that I can check out quickly.</em>
+
+![enter payment details gif](assets/readme/user_story_testing/checkout/enter_payment_details.gif)
+
+<em>As a shopper I can know that my personal information is being treated securely so that make a purchase with confidence.</em>
+
+![secure checkout gif](assets/readme/user_story_testing/checkout/secure_checkout.gif)
+
+<em>As a shopper I can view an order confirmation after checkout so that I can be sure there are no mistakes.</em>
+
+![image of order confirmation after checkout](assets/readme/user_story_testing/checkout/order_confirmation.png)
+
+<em>As a shopper I can receive an email after making my purchase so that I can refer to this in the future.</em>
+
+![image of order confirmation email](assets/readme/user_story_testing/checkout/order_confirmation_email.png)
+
+
+
+### EPIC | Admin and Store Management
+
+<em>As a store owner I can easily add new artwork to the store so that the store always has enough artwork for sale.</em>
+
+![create new artwork gif](assets/readme/user_story_testing/admin/create_artwork.gif)
+
+<em></em>
+
+![edit and delete artwork gif](assets/readme/user_story_testing/admin/edit_delete_artwork.gif)
+
 ## Feature Testing
 
 ## Bugs

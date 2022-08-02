@@ -319,6 +319,18 @@ For the SEO optimization, after doing some research using [word tracker](https:/
 - [Lucidchart](https://lucid.co/)
     - Lucidchat was used to make the ERD in this readme.
 
+- [Windows Snipping Tool](https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b)
+    - I used this tool to easily take and crop screenshots.
+
+- [ShareX](https://getsharex.com/)
+    - I used this tool to record videos, and automatically encode them into gif format.
+
+- [Freeconvert](https://www.freeconvert.com/)
+    - I used this website to reduce the size of the gifs that I recorded for the user story testing in  TESTING.md
+
+- []()
+
+
 [Back to top ⇧](#jc-artist-gallery)
 
 
