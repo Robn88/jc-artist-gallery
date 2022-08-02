@@ -17,12 +17,13 @@
                             <th scope="col" class="text-center">Piece</th>
                             <th scope="col" class="text-center">Title</th>
                             <th scope="col" class="text-center">Subtotal</th>
+                            <th></th>
                         </tr>
                     </thead>
 
                     {% for item in bag_items %}
                     <tr>
-                        <td class="p-3 w-25"><img class="img-fluid" src="{{ item.artwork.image.url }}"></td>
+                        <td class="p-3 w-25"><img class="img-fluid" src="{{ item.artwork.image.url }}" alt="{{ artwork.name }}"></td>
                         <td class="text-center">{{ item.artwork.name }}</td>
                         <td class="text-center">{{ item.artwork.price }}</td>
                         <td class="text-center">
@@ -54,7 +55,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript">
+<script>
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
