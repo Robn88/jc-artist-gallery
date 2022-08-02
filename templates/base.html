@@ -49,7 +49,7 @@
 <body>
   <header class="container-fluid sticky-top bg-white" id="topnav">
     <div class="row d-flex justify-content-md-around">
-      <div class="col-auto col-md-6">
+      <div class="col col-sm-4">
         <nav class="navbar navbar-expand-md navbar-light">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,18 +60,8 @@
               <li class="nav-item active">
                 <a class="nav-link text-black" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Works
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'artwork' %}">All categories</a>
-                  <!-- <a class="dropdown-item" href="#">Still Life</a>
-                  <a class="dropdown-item" href="#">Real Life</a>
-                  <a class="dropdown-item" href="#">Landscapes</a>
-                  <a class="dropdown-item" href="#">Portraits</a> -->
-                </div>
+              <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'artwork' %}">Gallery</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-black" href="{% url 'about' %}">About</a>
@@ -86,8 +76,8 @@
           </div>
         </nav>
       </div>
-      <div class="col-auto col-md-6 float-right">
-        <ul class="list-inline list-unstyled text-center">
+      <div class="col col-sm-8 pt-2">
+        <ul class="list-inline list-unstyled text-center float-right">
           <li class="list-inline-item dropdown">
             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
