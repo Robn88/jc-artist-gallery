@@ -32,7 +32,11 @@
 
 - [Credits](#credits)
 
+- [Acknowledgements](#acknowledgements)
+
 ## User Experience
+
+![amiresponsive pic](assets/readme/amiresponsive.png)
 
 JC Artist Gallery is a site which allows users to browse works of art by an Artist, and then buy them if desired. Users can create an account, and sign up for a newsletter. The likely visitors to the website are people who are interested in art by this particular artist - they may have found out about him at an exhibition. They may also have searched for art by local artists in the Bristol area.
 
@@ -232,7 +236,24 @@ This is the entity relationship diagram for my data:
 
 ## Future Features
 
-- 
+There are many features that could be implemented in this site, as detailed below:
+
+
+### Artwork Sorting
+
+- As mentioned previously, I have not implemented sorting and search criteria for art. I have already gone through my rationale for this - namely, the site in its current state does not need search functionality. However, as the site continues to grow, with more pieces of art, and pitentially more artists, this could become a very useful feature. If I were to implement it, I would like it to take up as little space as possible - so, with all of the filters hidden behind a single drop down box, for example. This would be to preserve the feel of the gallery when landing on the page for the first time- I want the art to be clearly visible, and not for users to have to scroll down past a wall of filters and radio buttons.
+
+### Integrate Instagram feed into about page
+
+- In order to attract new followers, rather than just having a link to an Instagram page, an option could be to embed the feed on the about page. Users would then be able to see the most recent posts, and be more likely to follow the artist. It would also help to pad out the about page, which is currently relatively sparse.
+
+### Artwork sold tag
+
+- Given that each piece is unique, the ability to automatically add a sold tag to a piece of art would be very important. It may also help to then move artwork into an unsold page (i.e, "Works for sale") while moving the sold artwork into a separate page (i.e, "Sold works"). This would allow potential customers to see what artwork has been produced in the past, and if they are interested in something similar, to use the contact form to make a request.
+
+### Image Zoom
+
+- Another feature which I have yet to implement is an image zoom function on the artwork detail page. This would allow users to inspect in higher detail the art. For now, the pictures are of a sufficient quality, and can be opened in a new tab by clicking on them, allowing users to view them in their full size. This is an adequate stopgap solution.
 
 ## Web Marketing
 
@@ -451,3 +472,14 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 
 
+## Acknowledgements
+
+I would like to thank the following for their invaluable assitance in finishing this project:
+
+- My mentor Tim, who offered assistance with ideas and their implementation, and offered firm but fair criticism. He was also gave me his own personalised messages system, which fitted perfectly with the aesthetics of my project, for which I am extremely grateful.
+
+- The Code Institute Slack community was my first stop for questions about a plethora of code questions and UI choices. I was able to find solutions to questions, and ideas for my project, simply by browsing the history. They also offered pointers when I was stuck with some issues.
+
+- The Code Institute tutor support system, which I made use of on multiple occasions. They were able to push me in the right direction, without explicitly giving me the answers, which helped me not only resolve my problems, but understand why I was experiencing them in the first place. I'm really happy with how much I've learned during this project, and a lot of this is in no small part down to them.
+
+- Finally, my friends and family, who tested the website, and offered feedback on design choices. Many thanks!

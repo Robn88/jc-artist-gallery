@@ -4,7 +4,6 @@
 
 - [Validators](#validators)
 - [User Story Testing](#user-story-testing)
-- [Feature Testing](#feature-testing)
 - [Bugs](#bugs)
 
 
@@ -147,6 +146,16 @@ The code for the python files was tested using [this website](http://pep8online.
 
 ![edit and delete artwork gif](assets/readme/user_story_testing/admin/edit_delete_artwork.gif)
 
-## Feature Testing
-
 ## Bugs
+
+### Fixed
+
+Documentation for these bugs, with screenshots, can be found [here](https://github.com/Robn88/jc-artist-gallery/issues?q=is%3Aissue+is%3Aclosed).
+
+- During the creation of the contact app, I had a name error. This was as a result of not using inverted commas around POST on line 10 of views.py. In this case, the error message was very clear, and I was able to understand easily my error.
+
+- I also had a name error, where 'redirect' was not defined. Again, this was a simple error to fix, as I knew that redirect is a common import from django shortcuts. Importing this at the top of the file fixed the issue.
+
+- I had a type error, which was caused by having brackets after the declaration of a variable. Removing these brackets fixed the error. I would eventually add the brackets back and give it the parameters of `request.POST, request.FILES`. However, at this point in the project, I wanted to simply render the view, to make sure that the URL was hooked up correctly, before implementing the form.
+
+- I had an error where I had referenced an error before assignment. I had a for loop with a nested if/else statement inside. I created a variable `already_in_bag` inside the if/else statement. However, Python does not allow local variables to be referenced before they have been assigned. The simple fix to this was to create the variable `already_in_bag` before the loop and set its value to `False`.
